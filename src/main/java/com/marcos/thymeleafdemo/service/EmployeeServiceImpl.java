@@ -3,7 +3,6 @@ package com.marcos.thymeleafdemo.service;
 import com.marcos.thymeleafdemo.dao.EmployeeRepository;
 import com.marcos.thymeleafdemo.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -27,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService
 //    @Transactional
     public List<Employee> findAll()
     {
-        return employeeRepository.findAll();
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
