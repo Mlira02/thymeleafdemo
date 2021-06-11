@@ -26,7 +26,8 @@
                 <td th:text="${tempEmployee.firstName}"></td>
                 <td th:text="${tempEmployee.lastName}"></td>
                 <td th:text="${tempEmployee.email}"></td>
-                <td><a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}" class="btn btn-info btn-sm">Update</a></td>
+                <td><a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}" class="btn btn-info btn-sm">Update</a>
+                <a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}" onclick="if(! (confirm('Are you sure you want to delete this employee?'))) return false" class="btn btn-danger btn-sm">Delete</a></td>
             </tr>
         </table>
     </div>
